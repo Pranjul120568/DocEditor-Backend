@@ -18,7 +18,7 @@ const io = require("socket.io")(server, {
 });
 dotenv.config();
 const cors = require("cors");
-app.use(cors());
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 io.on("connection", (socket) => {
   //console.log("User Connected...")
 
