@@ -8,7 +8,14 @@ const path = require("path");
 const socketio = require("socket.io");
 const http = require("http");
 const server = http.createServer(app);
-const io = socketio(server);
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true,
+  },
+});
 dotenv.config();
 const cors = require("cors");
 app.use(cors());
