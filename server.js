@@ -18,7 +18,7 @@ const io = require("socket.io")(server, {
 });
 dotenv.config();
 const cors = require("cors");
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://doceditor99.netlify.app" }));
 io.on("connection", (socket) => {
   //console.log("User Connected...")
 
